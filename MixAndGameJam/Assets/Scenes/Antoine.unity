@@ -430,7 +430,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f79bfe359b139e94a9ddabb0c0d7631c, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.57872015, g: 0.6945797, b: 0.8018868, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  color: blue
+  color: {r: 0, g: 0, b: 0, a: 0}
   disguise: blue
 --- !u!1 &963194225
 GameObject:
@@ -838,31 +838,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7054478308394909722, guid: 5fa67f0be1fec804b9c051bc5abe334b,
-        type: 3}
-      propertyPath: loot
-      value: 
-      objectReference: {fileID: 4288624799641880039, guid: 2423f4b1a6dc9ca4f976f427b780ca82,
-        type: 3}
-    - target: {fileID: 9115460045911256331, guid: 5fa67f0be1fec804b9c051bc5abe334b,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9115460045911256331, guid: 5fa67f0be1fec804b9c051bc5abe334b,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.3820755
-      objectReference: {fileID: 0}
-    - target: {fileID: 9115460045911256331, guid: 5fa67f0be1fec804b9c051bc5abe334b,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.3820755
-      objectReference: {fileID: 0}
     - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
         type: 3}
       propertyPath: onTriggerStay.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
         type: 3}
@@ -892,12 +871,68 @@ PrefabInstance:
     - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
         type: 3}
       propertyPath: onTriggerStay.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Stealth
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
         type: 3}
       propertyPath: onTriggerStay.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: color.r
+      value: 0.46925062
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: color.g
+      value: 0.66339886
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: color.b
+      value: 0.8962264
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: onTriggerStay.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: onTriggerStay.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115460045911256329, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: onTriggerStay.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054478308394909722, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: loot
+      value: 
+      objectReference: {fileID: 4288624799641880039, guid: 2423f4b1a6dc9ca4f976f427b780ca82,
+        type: 3}
+    - target: {fileID: 9115460045911256331, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115460045911256331, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.3820755
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115460045911256331, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.3820755
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115460045911256331, guid: 5fa67f0be1fec804b9c051bc5abe334b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa67f0be1fec804b9c051bc5abe334b, type: 3}
