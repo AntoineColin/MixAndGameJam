@@ -14,7 +14,6 @@ public class DisguiseZone : MonoBehaviour
         {
             SpriteRenderer characterRenderer = GameObject.Find("Thief").GetComponent<SpriteRenderer>();
             SpriteRenderer disguiseRenderer = gameObject.GetComponent<SpriteRenderer>();
-            Debug.Log("character : " + characterRenderer.color + " et deguisement : " + disguiseRenderer.color);
             Color exchange = characterRenderer.color;
             characterRenderer.color = disguiseRenderer.color;
             disguiseRenderer.color = exchange;

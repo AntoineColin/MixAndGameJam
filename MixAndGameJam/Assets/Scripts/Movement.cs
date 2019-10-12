@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed;
-    float position;
+    float savedPosition;
     Rigidbody2D rgbd;
     SpriteRenderer sprite;
     public UnityEngine.Color color;
@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        position = transform.position.x;
+        savedPosition = transform.position.x;
         rgbd = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         
@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
         rgbd.velocity=(movement * speed);
-        switch (disguise)
+        /*switch (disguise)
         {
             case "blue":
                 if (rgbd.velocity != new Vector2(0, 0))
@@ -60,21 +60,33 @@ public class Movement : MonoBehaviour
                     color = sprite.color;
                 }
                 break;
+        }*/
+        if(rgbd.velocity != Vector2.zero && sprite.color == color)
+        {
+            sprite.color = Color32.Lerp(color, Color.white, 0.5f);
         }
-        
+        if(rgbd.velocity == Vector2.zero && sprite.color != color)
+        {
+            sprite.color = color;
+        }
     }
 
     public void Stealth(Color32 ennemyColor)
     {
         if (ennemyColor != this.color)
         {
+            Debug.Log(ennemyColor + color);
             this.Die();
         }
     }
 
     public void Die()
     {
-        transform.position = new Vector2(position,0);
+        transform.position = new Vector2(savedPosition,0);
     }
 
+    public void SavePosition(float xpos)
+    {
+        savedPosition = xpos;
+    }
 }
