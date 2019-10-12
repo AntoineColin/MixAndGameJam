@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     float position;
     Rigidbody2D rgbd;
     SpriteRenderer sprite;
-    public string color = "blue";
+    public UnityEngine.Color color;
     public string disguise = "blue";
 
     public void SetDisguise(string disguise)
@@ -38,13 +38,13 @@ public class Movement : MonoBehaviour
             case "blue":
                 if (rgbd.velocity != new Vector2(0, 0))
                 {
-                    sprite.color = UnityEngine.Color.cyan;
-                    color = "lightblue";
+                    sprite.color = new Color32(255,97,97,255);
+                    color = sprite.color;
                 }
                 else
                 {
                     sprite.color = UnityEngine.Color.blue;
-                    color = "darkblue";
+                    color = sprite.color;
                 }
                 break;
 
@@ -52,21 +52,21 @@ public class Movement : MonoBehaviour
                 if (rgbd.velocity != new Vector2(0, 0))
                 {
                     sprite.color = UnityEngine.Color.magenta;
-                    color = "lightred";
+                    color = sprite.color;
                 }
                 else
                 {
                     sprite.color = UnityEngine.Color.red;
-                    color = "darkred";
+                    color = sprite.color;
                 }
                 break;
         }
         
     }
 
-    public void Stealth()
+    public void Stealth(Color32 ennemyColor)
     {
-        if (color != "lightred")
+        if (ennemyColor != this.color)
         {
             this.Die();
         }

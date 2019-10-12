@@ -5,9 +5,15 @@ using UnityEngine.Events;
 
 public class TriggerZone : MonoBehaviour
 {
-
+    SpriteRenderer sprite;
+    public Color32 color;
     public UnityEvent onTriggerEnter = new UnityEvent(), onTriggerStay = new UnityEvent(), onTriggerExit = new UnityEvent();
 
+    void Start()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+        color = sprite.color;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,7 +27,7 @@ public class TriggerZone : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (onTriggerStay != null) onTriggerStay.Invoke();
+            if (onTriggerStay != null) /*onTriggerStay.Invoke()*/collision.SendMessage("Stealth",this.color);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
