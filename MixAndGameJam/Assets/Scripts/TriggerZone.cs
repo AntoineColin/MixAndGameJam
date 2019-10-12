@@ -14,6 +14,7 @@ public class TriggerZone : MonoBehaviour
         if(collision.tag == "Player")
         {
             if (onTriggerEnter != null) onTriggerEnter.Invoke();
+            collision.gameObject.SendMessage("Die");
         }
     }
 

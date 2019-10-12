@@ -32,4 +32,10 @@ public class Movement : MonoBehaviour
             sprite.color = UnityEngine.Color.blue;
         }
     }
+
+    void Die()
+    {
+        transform.position = new Vector2(position,0);
+    }
+
 }
