@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     float position;
     Rigidbody2D rgbd;
     SpriteRenderer sprite;
+    public string color = "blue";
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +28,19 @@ public class Movement : MonoBehaviour
         if (rgbd.velocity != new Vector2 (0, 0))
         {
             sprite.color = UnityEngine.Color.red;
+            color = "red";
         }else
         {
             sprite.color = UnityEngine.Color.blue;
+            color = "blue";
+        }
+    }
+
+    public void Stealth()
+    {
+        if (color == "blue")
+        {
+            this.Die();
         }
     }
 
