@@ -7,6 +7,7 @@ public class Ennemy : MonoBehaviour
 {
     bool killable = false;
     UnityEvent onKillable = new UnityEvent(), onNonKillable = new UnityEvent();
+    public GameObject loot;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class Ennemy : MonoBehaviour
         if( killable && Input.GetButtonDown("Action"))
         {
             gameObject.SetActive(false);
+            Instantiate(loot, this.transform.position, this.transform.rotation);
         }
     }
 

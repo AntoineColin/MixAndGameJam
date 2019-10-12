@@ -9,6 +9,14 @@ public class Movement : MonoBehaviour
     Rigidbody2D rgbd;
     SpriteRenderer sprite;
     public string color = "blue";
+    public string disguise = "blue";
+
+    public void SetDisguise(string disguise)
+    {
+        this.disguise = disguise;
+    }
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,20 +33,40 @@ public class Movement : MonoBehaviour
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
         rgbd.velocity=(movement * speed);
-        if (rgbd.velocity != new Vector2 (0, 0))
+        switch (disguise)
         {
-            sprite.color = UnityEngine.Color.red;
-            color = "red";
-        }else
-        {
-            sprite.color = UnityEngine.Color.blue;
-            color = "blue";
+            case "blue":
+                if (rgbd.velocity != new Vector2(0, 0))
+                {
+                    sprite.color = UnityEngine.Color.cyan;
+                    color = "lightblue";
+                }
+                else
+                {
+                    sprite.color = UnityEngine.Color.blue;
+                    color = "darkblue";
+                }
+                break;
+
+            case "red":
+                if (rgbd.velocity != new Vector2(0, 0))
+                {
+                    sprite.color = UnityEngine.Color.magenta;
+                    color = "lightred";
+                }
+                else
+                {
+                    sprite.color = UnityEngine.Color.red;
+                    color = "darkred";
+                }
+                break;
         }
+        
     }
 
     public void Stealth()
     {
-        if (color == "blue")
+        if (color != "lightred")
         {
             this.Die();
         }
