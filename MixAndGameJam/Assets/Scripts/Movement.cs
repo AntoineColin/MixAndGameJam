@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
         rgbd.velocity=(movement * speed);
     }
