@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,6 +14,12 @@ public class TriggerZone : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         color = sprite.color;
+        onTriggerStay.AddListener(Watch);
+    }
+
+    void Watch()
+    {
+        GameObject.Find("Thief").GetComponent<Movement>().Stealth(color);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,7 +34,7 @@ public class TriggerZone : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (onTriggerStay != null) /*onTriggerStay.Invoke()*/collision.SendMessage("Stealth",this.color);
+            if (onTriggerStay != null) onTriggerStay.Invoke();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
