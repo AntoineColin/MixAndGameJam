@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         transform.position = new Vector2(position,0);
     }
