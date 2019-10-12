@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowingCamera : MonoBehaviour
 {
-
+    
     public Transform target;
     public float distance;
 
