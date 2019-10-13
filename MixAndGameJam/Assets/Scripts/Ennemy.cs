@@ -14,6 +14,7 @@ public class Ennemy : MonoBehaviour
     {
         textUI = GameObject.Find("Assassinate");
         textUI.SetActive(false);
+        loot.GetComponent<SpriteRenderer>().color = gameObject.GetComponent<SpriteRenderer>().color;
     }
 
     void Update()
