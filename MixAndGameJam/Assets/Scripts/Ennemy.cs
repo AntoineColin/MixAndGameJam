@@ -19,7 +19,11 @@ public class Ennemy : MonoBehaviour
         if( killable && Input.GetButtonDown("Action"))
         {
             gameObject.SetActive(false);
-            Instantiate(loot, this.transform.position, this.transform.rotation);
+            if (loot != null)
+            {
+                Instantiate(loot, this.transform.position, this.transform.rotation);
+            }
+           
         }
     }
 
