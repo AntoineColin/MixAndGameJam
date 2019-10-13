@@ -5,10 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    List<GameObject> ennemies = new List<GameObject>();
+
     void Start()
     {
-        
+        foreach(GameObject go in GameObject.FindGameObjectsWithTag("Ennemy"))
+        {
+            ennemies.Add(go);
+        }
+
+        GameObject.Find("Thief").GetComponent<Movement>().onDeath.AddListener(Reset);
+    }
+
+    private void Reset()
+    {
+        foreach(GameObject go in ennemies)
+        {
+            if (!go.activeSelf) go.SetActive(true);
+            Debug.Log("Reset !");
+        }
     }
 
     // Update is called once per frame

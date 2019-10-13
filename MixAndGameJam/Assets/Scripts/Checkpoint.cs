@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Checkpoint : MonoBehaviour
 {
 
-    UnityEvent onSave = new UnityEvent();
+    public UnityEvent onSave = new UnityEvent();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
