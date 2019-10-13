@@ -8,13 +8,18 @@ public class Ennemy : MonoBehaviour
     bool killable = false;
     
     public GameObject loot;
-    GameObject textUI;
+    static GameObject textUI;
 
     void Start()
     {
-        textUI = GameObject.Find("Assassinate");
-        textUI.SetActive(false);
-        loot.GetComponent<SpriteRenderer>().color = gameObject.GetComponent<SpriteRenderer>().color;
+        if (textUI == null)
+        {
+            textUI = GameObject.Find("Assassinate");
+            textUI.SetActive(false);
+        }
+       
+       
+        
     }
 
     void Update()
