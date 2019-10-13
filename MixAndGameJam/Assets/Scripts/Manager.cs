@@ -25,7 +25,6 @@ public class Manager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Quit"))
@@ -35,7 +34,12 @@ public class Manager : MonoBehaviour
 
         if (Input.GetButtonDown("Restart"))
         {
-            SceneManager.LoadScene(0);
+            GameObject.Find("Thief").GetComponent<Movement>().Die();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            SceneManager.LoadScene("Level");
         }
     }
 }
