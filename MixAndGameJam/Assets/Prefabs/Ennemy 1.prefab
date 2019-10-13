@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7381943589408633702}
   - component: {fileID: 7381943589408633701}
   - component: {fileID: 7381943589408633696}
-  - component: {fileID: 9047439029285054955}
+  - component: {fileID: 5157111990815499923}
   m_Layer: 0
   m_Name: Ennemy 1
   m_TagString: Ennemy
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loot: {fileID: 0}
---- !u!95 &9047439029285054955
+--- !u!95 &5157111990815499923
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ Animator:
   m_GameObject: {fileID: 7381943589408633700}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f99590bd0048b1742bf8c3888dcd3332, type: 2}
+  m_Controller: {fileID: 9100000, guid: ecdc24e9fd6d1374ba7188b12edd44c7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
