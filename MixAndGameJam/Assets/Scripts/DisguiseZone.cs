@@ -14,7 +14,6 @@ public class DisguiseZone : MonoBehaviour
         if (disguiseText == null)
         {
             disguiseText = GameObject.Find("Disguise");
-            Debug.Log("coucou");
             disguiseText.SetActive(false);
         }
     }

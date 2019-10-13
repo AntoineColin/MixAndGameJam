@@ -23,5 +23,6 @@ public class Victory : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         victoryText.SetActive(true);
+        GameObject.Find("Thief").GetComponent<Movement>().speed = 0;
     }
 }

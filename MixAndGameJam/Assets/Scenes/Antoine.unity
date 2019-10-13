@@ -1931,6 +1931,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 932679583829715637, guid: f975513aaeea802448a0b4e637c5a452,
+        type: 3}
+      propertyPath: m_Text
+      value: Assassinate
+      objectReference: {fileID: 0}
     - target: {fileID: 932679584089287884, guid: f975513aaeea802448a0b4e637c5a452,
         type: 3}
       propertyPath: m_AnchorMax.y
