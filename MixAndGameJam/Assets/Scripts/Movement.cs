@@ -61,21 +61,20 @@ public class Movement : MonoBehaviour
                 }
                 break;
         }*/
-        if(rgbd.velocity != Vector2.zero && sprite.color == color)
-        {
+        if(rgbd.velocity != Vector2.zero && sprite.color != Color32.Lerp(color, Color.white, 0.5f)){
             sprite.color = Color32.Lerp(color, Color.white, 0.5f);
         }
         if(rgbd.velocity == Vector2.zero && sprite.color != color)
         {
             sprite.color = color;
         }
+        
     }
 
     public void Stealth(Color32 ennemyColor)
     {
-        if (ennemyColor != this.color)
+        if (ennemyColor != sprite.color)
         {
-            Debug.Log(ennemyColor + color);
             this.Die();
         }
     }

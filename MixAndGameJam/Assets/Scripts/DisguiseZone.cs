@@ -12,10 +12,10 @@ public class DisguiseZone : MonoBehaviour
     {
         if(Input.GetButtonDown("Action") && activable)
         {
-            SpriteRenderer characterRenderer = GameObject.Find("Thief").GetComponent<SpriteRenderer>();
+            Movement character = GameObject.Find("Thief").GetComponent<Movement>();
             SpriteRenderer disguiseRenderer = gameObject.GetComponent<SpriteRenderer>();
-            Color exchange = characterRenderer.color;
-            characterRenderer.color = disguiseRenderer.color;
+            Color exchange = character.color;
+            character.color = disguiseRenderer.color;
             disguiseRenderer.color = exchange;
         }
     }

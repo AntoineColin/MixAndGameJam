@@ -21,7 +21,7 @@ public class Disguise : MonoBehaviour
         if (takeable && Input.GetButtonDown("Action"))
         {
             gameObject.SetActive(false);
-            GameObject.Find("Thief").GetComponent<Movement>().SetDisguise("red");
+            GameObject.Find("Thief").GetComponent<Movement>().color = GetComponent<SpriteRenderer>().color;
 
 
 
