@@ -6,12 +6,14 @@ using UnityEngine.Events;
 public class Ennemy : MonoBehaviour
 {
     bool killable = false;
-    UnityEvent onKillable = new UnityEvent(), onNonKillable = new UnityEvent();
+    
     public GameObject loot;
+    GameObject textUI;
 
     void Start()
     {
-        
+        textUI = GameObject.Find("Assassinate");
+        textUI.SetActive(false);
     }
 
     void Update()
@@ -32,7 +34,7 @@ public class Ennemy : MonoBehaviour
         if (collision.tag == "Player")
         {
             killable = true;
-            if (onKillable != null) onKillable.Invoke();
+            textUI.SetActive(true);
         }
     }
 
@@ -41,7 +43,7 @@ public class Ennemy : MonoBehaviour
         if(collision.tag == "Player")
         {
             killable = false;
-            if (onNonKillable != null) onNonKillable.Invoke();
+            textUI.SetActive(false);
         }
     }
 }

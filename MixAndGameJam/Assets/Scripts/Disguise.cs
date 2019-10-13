@@ -7,24 +7,18 @@ public class Disguise : MonoBehaviour
 {
 
     bool takeable = false;
-    UnityEvent onTakeable = new UnityEvent(), onNonTakeable = new UnityEvent();
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (takeable && Input.GetButtonDown("Action"))
         {
             gameObject.SetActive(false);
             GameObject.Find("Thief").GetComponent<Movement>().color = GetComponent<SpriteRenderer>().color;
-
-
-
         }
     }
 
@@ -33,7 +27,7 @@ public class Disguise : MonoBehaviour
         if (collision.tag == "Player")
         {
             takeable = true;
-            if (onTakeable != null) onTakeable.Invoke();
+            DisguiseZone.disguiseText.SetActive(true);
         }
     }
 
@@ -42,7 +36,7 @@ public class Disguise : MonoBehaviour
         if (collision.tag == "Player")
         {
             takeable = false;
-            if (onNonTakeable != null) onNonTakeable.Invoke();
+            DisguiseZone.disguiseText.SetActive(false);
         }
     }
 }

@@ -22,7 +22,6 @@ public class Manager : MonoBehaviour
         foreach(GameObject go in ennemies)
         {
             if (!go.activeSelf) go.SetActive(true);
-            Debug.Log("Reset !");
         }
     }
 

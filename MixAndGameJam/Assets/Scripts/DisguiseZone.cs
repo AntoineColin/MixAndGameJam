@@ -5,9 +5,19 @@ using UnityEngine.Events;
 
 public class DisguiseZone : MonoBehaviour
 {
-    UnityEvent onDisguiseZone = new UnityEvent(), onNonDisguiseZone = new UnityEvent();
     bool activable = false;
+    public static GameObject disguiseText;
 
+
+    private void Start()
+    {
+        if (disguiseText == null)
+        {
+            disguiseText = GameObject.Find("Disguise");
+            Debug.Log("coucou");
+            disguiseText.SetActive(false);
+        }
+    }
     private void Update()
     {
         if(Input.GetButtonDown("Action") && activable)
@@ -25,7 +35,7 @@ public class DisguiseZone : MonoBehaviour
         if(collision.tag == "Player")
         {
             activable = true;
-            if (onDisguiseZone != null) onDisguiseZone.Invoke();
+            disguiseText.SetActive(true);
         }
     }
 
@@ -34,7 +44,7 @@ public class DisguiseZone : MonoBehaviour
         if(collision.tag == "Player")
         {
             activable = false;
-            if (onNonDisguiseZone != null) onNonDisguiseZone.Invoke();
+            disguiseText.SetActive(false);
         }
     }
 }
